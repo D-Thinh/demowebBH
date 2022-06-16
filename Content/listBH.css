@@ -1,0 +1,80 @@
+﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"% >
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"% >
+<jsp:include page="HeaderPage.jsp" > </jsp:include >
+<style >
+.tb-cart {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.tb-main {
+    width: auto;
+}
+
+    .tb-main thead {
+        border-bottom: groove;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+
+    .tb-main th {
+        text-align: center;
+        width: 9%;
+    }
+
+        .tb-main th tr {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+    .tb-main tbody tr td {
+        text-align: center;
+        width: 20%;
+    }
+
+    .tb-main tfoot {
+        border-top: groove;
+    }
+
+.image-cart {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.btn-removeprd {
+    width: 80%;
+    height: 40px;
+    background-color: lightcoral;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    padding: 10px 30px 10px 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.note-wrap {
+    width: 100%;
+    height: auto;
+    margin: 10px auto;
+    background-color: rgba(0, 0, 0, 0.71);
+    min-height: 90px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-top: 80px;
+}
+
+    .note-wrap textarea {
+        width: 100%;
+        min-height: 60px;
+        padding: 0 20px 0 20px;
+    }
+
+</style >

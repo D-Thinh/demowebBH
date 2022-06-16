@@ -1,0 +1,96 @@
+﻿@model WedBH.Models.User
+
+@{ ViewBag.Title = "DangKy";
+    Layout = null; }
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/Content/login.css" />
+    <script src="~/Scripts/jquery-3.4.1.js" type="text/javascript"></script>
+    <script src="~/Scripts/core.min.js"></script>
+    <script src="~/Scripts/md5.js"></script>
+    <script src="~/Scripts/sweetalert.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/login-admin.js" type="text/javascript"></script>
+    <title>Dăng ký</title>
+</head>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <body>
+        <div class="container">
+            <div class="form">
+                <div class="heading">
+                    <!--<img src="logo.png" class="logo">-->
+                    <h1>Đăng ký tài khoản khác hàng</h1>
+                </div>
+                <div class="wrap">
+                    <h5 htmlAttributes: new { class="control-label col-md-2" } style="color: black">Họ Tên:</h5>
+                    @Html.EditorFor(model => model.TEN, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TEN, "", new { @class = "text-danger" })
+                </div>
+                <div class="wrap">
+                    <h5 htmlAttributes: new { class="control-label col-md-2" } style="color: black">Gmail:</h5>
+                    @Html.EditorFor(model => model.GMAIL, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.GMAIL, "", new { @class = "text-danger" })
+                </div>
+                <div class="wrap">
+                    <h5 htmlAttributes: new { class="control-label col-md-2" } style="color: black">Số điện thoại:</h5>
+                    @Html.EditorFor(model => model.SDT, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SDT, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="wrap">
+                    <h5 htmlAttributes: new { class="control-label col-md-2" } style="color: black">Tên tài khoản:</h5>
+                    @Html.EditorFor(model => model.TK, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TK, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="wrap">
+                    <h5 htmlAttributes: new { class="control-label col-md-2" } style="color: black">Mật khẩu:</h5>
+                    @Html.EditorFor(model => model.MK, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MK, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="wrap">
+                    <h5 htmlAttributes: new { class="control-label col-md-2" }>Xác nhận mật khẩu:</h5>
+                  
+                   
+                        <input class="form-control text-box single-line input-validation-error" data-val="true" data-val-required="Phải nhập mật khẩu xác nhận!"
+                               id="MatKhauXacNhan" name="MatKhauXacNhan" type="password" value="" aria describedby="MatKhauXacNhan-error" aria-invalid="true">
+                        @ViewData["NhapMKXN"]
+                        @ViewData["MatKhauGiongNhau"]
+                  
+
+                </div>
+
+                @Html.ActionLink("Đăng nhập:", "DangNhap", "NguoiDung")
+                <input type="submit" value="Đăng ký" class="btn btn-default" />
+
+
+            </div>
+            
+                <div class="image">
+                    <img src="~/images/img.jpg" class="img" alt="">
+                </div>
+            </div>
+    </body>
+}
+</html>
+
+@*<style>
+    html, body {
+        background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100%;
+        font-family: 'Numans', sans-serif;
+    }
+
+    .form-horizontal {
+        align-content: center;
+    }
+</style>
+*@

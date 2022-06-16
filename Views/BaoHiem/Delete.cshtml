@@ -1,0 +1,128 @@
+﻿@model WedBH.Models.Baohiem
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xóa</h2>
+
+<h3>Bạn có chắc muốn xóa dữ liệu chứ?</h3>
+<div>
+    <h4>Baohiem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <th>Mã bảo hiểm</th>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MABH)
+        </dd>
+
+
+        <dt>
+            <th>Tên chủ xe</th>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENCHUXE)
+        </dd>
+
+        <dt>
+            <th>Số điện thoại</th>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDT)
+        </dd>
+        <dt>
+            <th>Phân khối xe</th>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phankhoixe.PHANKHOIXE1)
+        </dd>
+        <dt>
+            <th>Giới tính</th>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GIOITINH)
+        </dd>
+
+        <dt>
+            <th>Địa chỉ</th>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIACHI)
+        </dd>
+
+        <dt>
+            <th>Biển số</th>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BIENSO)
+        </dd>
+
+        <dt>
+            <th>Số khung</th>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SOKHUNG)
+        </dd>
+
+        <dt>
+            <th>Số máy</th>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SOMAY)
+        </dd>
+        <dt>
+            <th>Thời gian bảo hiểm</th>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.THOIHANBD.Date)
+        </dd>
+
+        <dt>
+            <th>Thời gian kết thúc</th>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.THOIHANKT.Date)
+        </dd>
+
+        <dt>
+            <th>Phí bảo hiểm</th>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PHIBH)
+        </dd>
+
+        <dt>
+            <th>Email người dùng</th>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gmail)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "ListBaoHiem")
+        </div>
+    }
+</div>

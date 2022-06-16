@@ -1,0 +1,231 @@
+﻿@model WedBH.Models.Baohiem
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="index-hero slick-initialized slick-slider">
+        <div class="slick-list draggable" style="height: 280.75px;">
+            <div class="slick-track" style="opacity: 1; width: 1309px;">
+                <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 1309px; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;">
+                    <div>
+                        <div class="hero__slide" style="width: 100%; display: inline-block;">
+
+                            <picture style=" width : 100%">
+                                <img src="~/images/bikecategory.jpg" alt=" " class="img-responsive" />
+                            </picture>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-horizontal">
+
+
+
+        <div class="">
+        </div>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.MABH, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5> Mã bảo hiểm  : @Html.DisplayFor(model => model.MABH)</h5>
+            <div class="col-md-10">
+                @*  @Html.EditorFor(model => model.MABH, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MABH, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+
+        <div class="form-group">
+            @* @Html.LabelFor(model => model.TENCHUXE, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5> Tên chủ xe @Html.DisplayFor(model => model.TENCHUXE)</h5>
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.TENCHUXE, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TENCHUXE, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.GIOITINH, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5> Giới tính:  @Html.DisplayFor(model => model.GIOITINH) </h5>
+            <div class="col-md-10">
+                @*   @Html.RadioButtonFor(model => model.GIOITINH, "Nam", "Nữ")
+                @Html.EditorFor(model => model.GIOITINH, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.GIOITINH, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.SDT, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5> Số điện thoại:     @Html.DisplayFor(model => model.SDT)</h5>
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.SDT, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SDT, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @*   @Html.LabelFor(model => model.MAPK, "MAPK", htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5> Phân khối xe:</h5>
+            <div class="col-md-10">
+                @if (Model.MAPK == "D50")
+                {
+                    <select name="MAPK" class="form-control">
+                        <option> Dưới 50 cc</option>
+                        <option> Trên 50 cc</option>
+                        <option> Xe mô tô 3 bánh tương tự</option>
+                    </select>
+                }
+                @if (Model.MAPK == "N50")
+                {
+                    <select name="MAPK" class="form-control">
+                        <option> Trên 50 cc</option>
+                        <option> Dưới 50 cc</option>
+                        <option> Xe mô tô 3 bánh tương tự</option>
+                    </select>
+                }
+                @if (Model.MAPK == "k50")
+                {
+                <select name="MAPK" class="form-control">
+                    <option> Xe mô tô 3 bánh tương tự</option>  
+                    <option> Trên 50 cc</option>
+                    <option> Dưới 50 cc</option>
+                </select>
+                }
+
+                @*  @Html.EditorFor(model => model.MAPK, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.MAPK, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+
+
+        <!--<div class="form-group">-->
+        @* @Html.LabelFor(model => model.DIACHI, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <!--<h5> Địa chỉ: </h5>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DIACHI, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DIACHI, "", new { @class = "text-danger" })
+        </div>
+    </div>-->
+
+        <div class="form-group">
+            @* @Html.LabelFor(model => model.BIENSO, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5> Biển số</h5>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.BIENSO, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.BIENSO, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*  @Html.LabelFor(model => model.SOKHUNG, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5> Số khung</h5>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SOKHUNG, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SOKHUNG, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.SOMAY, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5> Số máy</h5>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SOMAY, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SOMAY, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @* @Html.LabelFor(model => model.THOIHANBD, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5> Thời gian bắt đầu:  @Html.DisplayFor(model => model.THOIHANBD.Date)</h5>
+            <div class="col-md-10">
+                @*    @Html.EditorFor(model => model.THOIHANBD.Date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.THOIHANBD, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+        <div class="form-group">
+            @* @Html.LabelFor(model => model.THOIHANBD, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5> Thời hạn bảo hiểm:  @Html.DisplayFor(model => model.THOIHANKT.Date)</h5>
+            <div class="col-md-10">
+                @*    @Html.EditorFor(model => model.THOIHANBD.Date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.THOIHANBD, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+
+        <div class="form-group">
+            @* @Html.LabelFor(model => model.THOIHANKT, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5> Thời gian gia hạn thêm:</h5>
+            <div class="col-md-10">
+                <select name="THOIHANKT" class="form-control" onchange="changtotal(this)">
+                    <option> 6 tháng</option>
+                    <option> 12 tháng</option>
+                </select>
+                @*                @Html.EditorFor(model => model.THOIHANKT.Date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.THOIHANKT, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*  @Html.LabelFor(model => model.PHIBH, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5> Phí bảo hiểm</h5>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PHIBH, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PHIBH, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @* @Html.LabelFor(model => model.Gmail, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5> Gmail</h5>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Gmail, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Gmail, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <p >
+        </p>
+        <div class="buy-total">
+            <div class="buy-action row">
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <br />
+        <br />
+        <br />
+
+}
+<script language="javascript">
+    // Hàm xử lý khi thẻ select thay đổi giá trị được chọn
+    // obj là tham số truyền vào và cũng chính là thẻ select
+    function changtotal(THOIHANKT) {
+        var message = document.getElementById('show_message');
+        var value = THOIHANKT.value;
+        if (value === '') {
+            message.innerHTML = "Tổng phí (gồm VAT): 499.000 (VND)";
+        }
+        else if (value === 'Gói 6 tháng') {
+            message.innerHTML = "Tổng phí (gồm VAT): 499.000 (VND)";
+            message.innerHTML = "Số tiền chiết khấu: 0 (VND)";
+            message.innerHTML = "Tổng phí thực thu (gồm VAT):  499.000 (VND)";
+        }
+        else if (value === 'gói 12 tháng') {
+            message.innerHTML = "Tổng phí (gồm VAT): 999.000 (VND)";
+            message.innerHTML = "Số tiền chiết khấu: 0 (VND)";
+            message.innerHTML = "Tổng phí thực thu (gồm VAT):  999.000 (VND)";
+        }
+    }
+
+</script>
+<div>
+    @Html.ActionLink("Quay lại", "ListBaoHiem")
+</div>

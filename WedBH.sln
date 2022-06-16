@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32126.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WedBH", "WedBH.csproj", "{35536126-8507-4005-A7AB-C750C5876F2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commom", "..\Commom\Commom.csproj", "{180D54DA-9F9F-4119-8F3E-877445E0DEA7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35536126-8507-4005-A7AB-C750C5876F2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35536126-8507-4005-A7AB-C750C5876F2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35536126-8507-4005-A7AB-C750C5876F2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35536126-8507-4005-A7AB-C750C5876F2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{180D54DA-9F9F-4119-8F3E-877445E0DEA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{180D54DA-9F9F-4119-8F3E-877445E0DEA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{180D54DA-9F9F-4119-8F3E-877445E0DEA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{180D54DA-9F9F-4119-8F3E-877445E0DEA7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6458B71B-E24F-4820-A2F6-1FCD2B12F6DB}
+	EndGlobalSection
+EndGlobal

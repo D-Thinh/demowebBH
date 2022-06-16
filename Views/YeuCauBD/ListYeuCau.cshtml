@@ -1,0 +1,214 @@
+﻿@model IEnumerable<WedBH.Models.YeucauBD>
+
+@{
+    ViewBag.Title = "ListYeuCau";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Danh sách Yêu cầu bảo dưỡng:</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Mã yêu câu
+        </th>
+        <th>
+            Tài khoản
+        </th>
+        <th>
+            Mô tả
+        </th>
+        <th>
+            Trạng thái
+        </th>
+        <th>
+            Thời gian yêu cầu
+        </th>
+        <th>
+            Ảnh thứ nhất
+        </th>
+        <th>
+            Ảnh thứ hai
+        </th>
+        <th>
+            Ảnh thứ ba
+        </th>
+        <th>
+            Ảnh thứ tư
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.MAYC)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TK)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MOTA)
+    </td>
+    <td>
+        <button class="capNhatTrangThai" data-id="@item.TRANGTHAI">  @Html.DisplayFor(modelItem => item.TRANGTHAI)</button>
+
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.THOIGIANYEUCAU)
+    </td>
+    <td>
+        @*@Html.DisplayFor(modelItem => item.ANH1)*@
+        <img src="@item.ANH1" width="70px" height="70px" alt="Set UpDate" />
+    </td>
+    <td>
+        @*@Html.DisplayFor(modelItem => item.ANH2)*@
+        <img src="@item.ANH2" width="70px" height="70px" alt="Set UpDate" />
+    </td>
+    <td>
+       @* @Html.DisplayFor(modelItem => item.ANH3)*@
+        <img src="@item.ANH3" width="70px" height="70px" alt="Set UpDate" />
+    </td>
+    <td>
+       @* @Html.DisplayFor(modelItem => item.ANH4)*@
+        <img src="@item.ANH4" width="70px" height="70px" alt="Set UpDate" />
+    </td>
+    <td>
+        @Html.ActionLink("Xác nhận", "Edit", new { id = item.MAYC })
+    </td>
+</tr>
+}
+
+</table>
+<!--<div class="footer">
+    <div class="container">
+        <div class="footer-w3lsrow">
+            <div class="col-md-4 footer-grids footer-address">
+                <h3>Thông tin liên lạc:</h3>
+                <ul>
+                    <li><i class="glyphicon glyphicon-send"></i>39/6, Đường số 10, Phường Linh Xuân, Thành Phố Thủ Đức, Việt Nam<span>. </span></li>
+                    <li><i class="glyphicon glyphicon-phone"></i> +0793966897<span> +0773561819</span></li>
+                    <li><i class="glyphicon glyphicon-envelope"></i> <a href="mailto:example@mail.com">nguyenthanh1472@gmail.com</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 footer-grids subscribe">
+                <h3>Newsletter :</h3>
+                <form action="#" method="post">-->
+                    @* <input type="email" name="Email" placeholder="Your Email" required="">*@
+                    @*<input type="submit" value="Theo dõi">*@
+                    <!--<div class="clearfix"> </div>
+                </form>
+
+            </div>
+            <div class="col-md-4 footer-grids footer-icons">
+                <h3>Follow Us :</h3>
+                <div class="agile_social_icons">
+                    <ul class="agileits_social_list">
+                        <li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                        <li><a href="#" class="w3_agile_vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="footer-bottom">
+            <p>©2022 Dịch vụ xe máy. Cám ơn tất cả quí khách đã ghé thăm     Thiết kế <a href="https://www.facebook.com/profile.php?id=1007612626475">Nhóm 6</a></p>
+        </div>
+    </div>
+</div>-->
+
+
+
+<style>
+    body {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+        line-height: 1.42em;
+        color: #A7A1AE;
+        background-color: #1F2739;
+    }
+
+    h1 {
+        font-size: 3em;
+        font-weight: 300;
+        line-height: 1em;
+        text-align: center;
+        color: #4DC3FA;
+    }
+
+    .container th h1 {
+        font-weight: bold;
+        font-size: 1em;
+        text-align: left;
+        color: #185875;
+    }
+
+    .container td {
+        font-weight: normal;
+        font-size: 1em;
+        -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+        -moz-box-shadow: 0 2px 2px -2px #0E1119;
+        box-shadow: 0 2px 2px -2px #0E1119;
+    }
+
+@*    .container {
+        text-align: left;
+        overflow: hidden;
+        width: 80%;
+        margin: 0 auto;
+        display: table;
+        padding: 0 0 8em 0;
+    }
+*@
+        .container td, .container th {
+            padding-bottom: 2%;
+            padding-top: 2%;
+            padding-left: 2%;
+        }
+
+        /* Background-color of the odd rows */
+        .container tr:nth-child(odd) {
+            background-color: #323C50;
+        }
+
+        /* Background-color of the even rows */
+        .container tr:nth-child(even) {
+            background-color: #2C3446;
+        }
+
+        .container th {
+            background-color: #1F2739;
+        }
+
+        .container td:first-child {
+            color: #FB667A;
+        }
+
+        .container tr:hover {
+            background-color: #464A52;
+            -webkit-box-shadow: 0 6px 6px -6px #0E1119;
+            -moz-box-shadow: 0 6px 6px -6px #0E1119;
+            box-shadow: 0 6px 6px -6px #0E1119;
+        }
+
+        .container td:hover {
+            background-color: #FFF842;
+            color: #403E10;
+            font-weight: bold;
+            box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+            transform: translate3d(6px, -6px, 0);
+            transition-delay: 0s;
+            transition-duration: 0.4s;
+            transition-property: all;
+            transition-timing-function: line;
+        }
+    button, input, optgroup, select, textarea {
+        color: #FB667A;
+        font: inherit;
+        margin: 0;
+        background-color: #1F2739;
+    }
+</style>

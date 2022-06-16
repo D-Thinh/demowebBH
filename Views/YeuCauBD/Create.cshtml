@@ -1,0 +1,314 @@
+﻿@model WedBH.Models.YeucauBD
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="contentCreatePro">
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+
+        <div class="index-hero slick-initialized slick-slider">
+            <div class="slick-list draggable" style="height: 280.75px;">
+                <div class="slick-track" style="opacity: 1; width: 1309px;">
+                    <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 1309px; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;">
+                        <div>
+                            <div class="hero__slide" style="width: 100%; display: inline-block;">
+
+                                <picture style=" width : 100%">
+                                    <img src="~/images/bikecategory.jpg" alt=" " class="img-responsive" />
+                                </picture>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal">
+
+
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @*<div class="form-group">
+                <div class="col-md-10">
+                    Mã yêu cầu
+                    @Html.EditorFor(model => model.MAYC, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MAYC, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    Tên tài khoản yêu cầu:  
+                    @Html.EditorFor(model => model.TK, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TK, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    Mô tả
+                    @Html.EditorFor(model => model.MOTA, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MOTA, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+         @*   <div class="form-group">
+                <div class="col-md-10">
+                    Mô Tả tình trạng
+                    @Html.EditorFor(model => model.TRANGTHAI, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TRANGTHAI, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+            @*<div class="form-group">
+                <div class="col-md-10">
+                    Thời gian yêu cầu
+                    @Html.EditorFor(model => model.THOIGIANYEUCAU, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.THOIGIANYEUCAU, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+
+            <div class="col-md-10">
+                Chọn hình ảnh:
+            </div>
+
+            @*<div class="form-group">
+                            @Html.LabelFor(model => model.MaLoai, "MaLoai", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                <select name="LoaiSanPham">
+                                    @foreach (var item in ViewBag.ListLoai)
+                                    {
+                                        <option value="@item.MaLoai"> @item.TenLoai</option>
+                }
+
+                                </select>
+                                @Html.ValidationMessageFor(model => model.MaLoai, "", new { @class = "text-danger" })
+                            </div>
+                        </div>*@
+
+            <div class="hinhAnhCreated">
+                <div class="form-group form-hinhanh">
+                    <label class="control-label col-md-2">
+                        Hình ảnh
+                    </label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ANH1, new { htmlAttributes = new { @class = "form-control label-hide hinhAnh1 hinhInputHide" } })
+
+                        <input id="ANH1" type="file" name="fileUpload" class="Anh1 inputAnh2" width="150px" height="150px" accept="image/*"
+                               style="display:none;" />
+                        <input type="button" value="Chọn" class="btn btn-success btn-chon btnUpload" data-id="Anh1" />
+                        <img src="" class="Anh1" id="ANH1" width="100px" height="150px" />
+                    </div>
+                </div>
+
+
+                <div class="form-group form-hinhanh">
+                    <label class="control-label col-md-2">
+                        Hình ảnh
+                    </label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ANH2, new { htmlAttributes = new { @class = "form-control label-hide hinhAnh2 hinhInputHide" } })
+
+                        <input id="Anh2" type="file" name="fileUpload" class="Anh2 inputAnh2" width="150px" height="150px" accept="image/*"
+                               style="display:none;" />
+                        <input type="button" value="Chọn" class="btn btn-success btn-chon btnUpload" data-id="Anh2" />
+                        <img src="" class="Anh2" id="Anh2" width="100px" height="150px" />
+                    </div>
+                </div>
+
+                <div class="form-group form-hinhanh">
+                    <label class="control-label col-md-2">
+                        Hình ảnh
+                    </label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ANH3, new { htmlAttributes = new { @class = "form-control label-hide hinhAnh3 hinhInputHide" } })
+
+                        <input id="Anh3" type="file" name="fileUpload" class="Anh3 inputAnh3" width="150px" height="150px" accept="image/*"
+                               style="display:none;" />
+                        <input type="button" value="Chọn" class="btn btn-success btn-chon btnUpload" data-id="Anh3" />
+                        <img src="" class="Anh3" id="Anh3" width="100px" height="150px" />
+                    </div>
+                </div>
+
+                <div class="form-group form-hinhanh">
+                    <label class="control-label col-md-2">
+                        Hình ảnh
+                    </label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ANH4, new { htmlAttributes = new { @class = "form-control label-hide hinhAnh4 hinhInputHide" } })
+
+                        <input id="Anh4" type="file" name="fileUpload" class="Anh4 inputAnh4" accept="image/*"
+                               style="display:none;" />
+                        <input type="button" value="Chọn" class="btn btn-success btn-chon btnUpload" data-id="Anh4" />
+                        <img src="" class="Anh4" id="Anh4" width="100px" height="150px" />
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Yêu Cầu !" class="btn btn-default" />
+                </div>
+            </div>
+        </div>}
+
+    <!--<div class="footer">
+        <div class="container">
+            <div class="footer-w3lsrow">
+                <div class="col-md-4 footer-grids footer-address">
+                    <h3>Thông tin liên lạc:</h3>
+                    <ul>
+                        <li><i class="glyphicon glyphicon-send"></i>39/6, Đường số 10, Phường Linh Xuân, Thành Phố Thủ Đức, Việt Nam<span>. </span></li>
+                        <li><i class="glyphicon glyphicon-phone"></i> +0793966897<span> +0773561819</span></li>
+                        <li><i class="glyphicon glyphicon-envelope"></i> <a href="mailto:example@mail.com">nguyenthanh1472@gmail.com</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 footer-grids subscribe">
+                    <h3>Newsletter :</h3>
+                    <form action="#" method="post">-->
+                        @* <input type="email" name="Email" placeholder="Your Email" required="">*@
+                        @*<input type="submit" value="Theo dõi">*@
+                        <!--<div class="clearfix"> </div>
+                    </form>
+
+                </div>
+                <div class="col-md-4 footer-grids footer-icons">
+                    <h3>Follow Us :</h3>
+                    <div class="agile_social_icons">
+                        <ul class="agileits_social_list">
+                            <li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="w3_agile_vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="footer-bottom">
+                <p>©2022 Dịch vụ xe máy. Cám ơn tất cả quí khách đã ghé thăm     Thiết kế <a href="https://www.facebook.com/profile.php?id=100007612626475">Nguyễn Ngọc Thành</a></p>
+            </div>
+        </div>
+    </div>-->
+
+</div>
+
+<style>
+    .hinhAnhCreated {
+        border: none;
+        display: flex;
+        height: 50%;
+        width: 30%;
+    }
+
+    .form-hinhanh {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hinhInputHide {
+        display: none;
+    }
+
+    .form-horizontal {
+        width: 82%;
+        /* display: inline-block; */
+        position: relative;
+        left: 50%;
+        transform: translateX(-29%);
+    }
+</style>
+@section upload
+{
+    <script>
+
+        $(function () {
+            $('.btnUpload').click(function () {
+                var idInputFile = $(this).attr("data-id");
+                $('.' + idInputFile).trigger('click');
+                $('.' + idInputFile).change(function () {
+                    console.log(idInputFile);
+                    if (window.FormData !== undefined) {
+                        console.log("Vô nè");
+                        var fileUpload = $('.' + idInputFile).get(0);
+                        console.log(fileUpload);
+                        var files = fileUpload.files;
+                        console.log(files);
+                        var formData = new FormData();
+                        console.log(formData);
+                        formData.append('file', files[0]);
+                        $.ajax(
+                            {
+                                type: 'POST',
+                                url: '/YeucauBD/ProcessUpload',
+                                contentType: false,
+                                processData: false,
+                                data: formData,
+                                success: function (urlImage) {
+                                    $('.' + idInputFile).attr('src', urlImage);
+                                    $('.hinh' + idInputFile).val(urlImage);
+                                },
+                                error: function (err) {
+                                    alert('Error ', err.statusText);
+
+                                }
+                            });
+                    }
+                });
+            });
+        });
+
+    </script>
+}
+@*<div class="form-group">
+    <div class="col-md-10">
+        <strong>Hình</strong>
+        @Html.EditorFor(model => model.ANH1, new { htmlAttributes = new { @class = "form-control" } })  
+        @Html.ValidationMessageFor(model => model.ANH1, "", new { @class = "text-danger" })  
+        <input type="file" name="fileUpload" id="fileUpload" accept="image/*" style="display:none;" />
+        <input type="button" id="btnUpload" value="Chọn" class="btn btn-success" />  <img src="@Model.ANH1" id="pictureUpload" />
+    </div>
+</div>*@
+@*@section upload
+{
+    <script>
+
+        $(function () {
+            $('#btnUpload').click(function () {
+                $('#fileUpload').trigger('click');
+            });
+        });
+        $('#fileUpload').change(function () {
+            if (window.FormData !== undefined) {
+                var fileUpload = $('#fileUpload').get(0);
+                var files = fileUpload.files;
+                var formData = new FormData();
+                formData.append('file', files[0]);
+                $.ajax(
+                    {
+                        type: 'POST',
+                        url: '/YeuCauBD/ProcessUpload',
+                        contentType: false,
+                        processData: false,
+                        data: formData,
+                        success: function (urlImage) {
+                            $('#pictureUpload').attr('src', urlImage); $('#hinh').val(urlImage);
+                        },
+                        error: function (err) {
+                            alert('Error ', err.statusText);
+                        }
+                    });
+            }
+        });
+    </script>
+}*@

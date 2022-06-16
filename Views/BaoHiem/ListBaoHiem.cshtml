@@ -1,0 +1,284 @@
+﻿@model IEnumerable<WedBH.Models.Baohiem>
+
+@{
+    ViewBag.Title = "ListBaoHiem";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    WebGrid grid = new WebGrid(source: Model, rowsPerPage: 5);
+}
+
+
+<div class="nen">
+    <h2>Danh sách cách khách đã đăng ký</h2>
+
+
+
+    @*<script type="text/javascript">
+            function loadcart() {
+                if (sessionStorage.getItem("TK") != null) {
+
+                    alert("Đăng nhập thành công");
+                }
+                else {
+                    alert("Đăng nhập thành công");
+                }
+
+            }
+            loadcart();
+        </script>*@
+
+    <div class="tb-cart">
+        <link rel="stylesheet" href="~/Content/listBH.css" />
+        <table class="table table-dark table-hover">
+            <thead style="">
+                <tr>
+                    <th>Mã BH</th>
+                    <th>Tên Chủ xe</th>
+                    <th>Số DT</th>
+                    <th>Giới tính</th>
+                    <th>Địa Chỉ</th>
+                    <th>Loại xe</th>
+                    <th>Biển số</th>
+                    <th>Số khung</th>
+                    <th>Số máy</th>
+                    <th>Gmail</th>
+                    <th>Thời gian có hiệu lực</th>
+                    <th>Thời gian kết thúc</th>
+                    <th>Phí bảo hiểm</th>
+                    <th></th>
+                    @*<th></th>*@
+                </tr>
+
+                @foreach (var item in Model)
+                {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MABH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TENCHUXE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SDT)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.GIOITINH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DIACHI)
+                </td>
+                <td>
+                    @if (item.MAPK == "D50")
+                    {<h4>Dưới 50 cc</h4>}
+                    @if (item.MAPK == "N50")
+                    {<h4>Trên 50 cc</h4>}
+                    @if (item.MAPK == "k50")
+                    {<h4>Xe mô tô 3 bánh tương tự</h4>}
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BIENSO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SOKHUNG)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SOMAY)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.THOIHANBD.Date)
+                </td>
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.THOIHANKT.Date)
+                    @*.ToString("dd/MM/yyyy")*@
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PHIBH)
+                </td>
+                <td>
+                    @Html.ActionLink("Gia hạn bảo hiểm", "Edit", new { id = item.MABH }) |
+                    @Html.ActionLink("Xóa bảo hiểm", "Delete", new { id = item.MABH })
+                </td>
+            </tr>
+                }
+            </thead>
+            <tbody id="producthere">
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="4"><h5 id="totalhere"> </h5></th>
+                    <th colspan="1" style="padding: 20px" id="payhere"></th>
+
+                </tr>
+            </tfoot>
+        </table>
+        <table class="tb-main">
+        </table>
+        <p>
+            @Html.ActionLink("Thêm mới Bảo hiểm", "Create")<br />
+            @Html.ActionLink("Nhắc lịch bảo dưỡng", "Feedback")<br />
+            @Html.ActionLink("Danh sách yêu câu bảo dưỡng", "ListYeuCau", "YeuCauBD")
+        </p>
+
+        <div class="note-wrap">
+            <h5 style="font-family: sans-serif; font-weight: bold;margin:10px; color:white">NOTE: </h5>
+            <textarea placeholder="Thêm chú thích tại đây..." id="notehere"></textarea>
+        </div>
+
+
+
+    </div>
+
+    <jsp:include page="Footer.jsp"></jsp:include>
+
+    @*@grid.GetHtml(
+            tableStyle: "gridTable",
+            headerStyle: "gridHead",
+            footerStyle: "gridFooter",
+            rowStyle: "gridRow",
+            alternatingRowStyle: "gridAltRow",
+            columns: grid.Columns(
+            grid.Column("MaSP", "Tên sản phẩm"),
+            grid.Column("TenSP", "Tên SP"),
+            //grid.Column("MoTa","Mô tả",format:p=>Html.Raw(p.MoTa)),
+            grid.Column("HinhAnh", "Hình ảnh", format: p => Html.Raw("<img src=\"../Content/HinhAnhSP/" + p.HinhAnh + "\" style=\"height:100px;width:150px\">")),
+            grid.Column(format: p => Html.ActionLink("Chỉnh sửa", "ChinhSua", new { id = p.MaSP })),
+            grid.Column(format: p => Html.ActionLink("Xóa", "Xoa", new { id = p.MaSP }))
+            )
+        )*@
+</div>
+
+
+
+<!--<style>-->
+   @* .nen {
+        background-color: aquamarine;
+    }
+    body{
+        background-color: aquamarine;
+    }*@
+    <!--.gridHead {
+        background-color: green
+    }
+
+        .gridHead > th > a {
+            color: white
+        }
+
+    /*.gridRow{
+        color:black;
+        background-color:blue
+    }*/
+
+    .gridAltRow {
+        border: 1px solid black;
+    }
+
+    .gridFooter {
+        font-weight: bold
+    }
+
+    .gridTable {
+        width: 100%;
+        border: 1px solid black
+    }
+
+        .gridTable > th, td {
+            border: 1px solid orange;
+            text-align: center;
+        }
+</style>-->
+
+<style>
+    body {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+        line-height: 1.42em;
+        color: #A7A1AE;
+        background-color: #1F2739;
+    }
+
+    h1 {
+        font-size: 3em;
+        font-weight: 300;
+        line-height: 1em;
+        text-align: center;
+        color: #4DC3FA;
+    }
+
+    .container th h1 {
+        font-weight: bold;
+        font-size: 1em;
+        text-align: left;
+        color: #185875;
+    }
+
+    .container td {
+        font-weight: normal;
+        font-size: 1em;
+        -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+        -moz-box-shadow: 0 2px 2px -2px #0E1119;
+        box-shadow: 0 2px 2px -2px #0E1119;
+    }
+
+@*    .container {
+        text-align: left;
+        overflow: hidden;
+        width: 80%;
+        margin: 0 auto;
+        display: table;
+        padding: 0 0 8em 0;
+    }
+*@
+        .container td, .container th {
+            padding-bottom: 2%;
+            padding-top: 2%;
+            padding-left: 2%;
+        }
+
+        /* Background-color of the odd rows */
+        .container tr:nth-child(odd) {
+            background-color: #323C50;
+        }
+
+        /* Background-color of the even rows */
+        .container tr:nth-child(even) {
+            background-color: #2C3446;
+        }
+
+        .container th {
+            background-color: #1F2739;
+        }
+
+        .container td:first-child {
+            color: #FB667A;
+        }
+
+        .container tr:hover {
+            background-color: #464A52;
+            -webkit-box-shadow: 0 6px 6px -6px #0E1119;
+            -moz-box-shadow: 0 6px 6px -6px #0E1119;
+            box-shadow: 0 6px 6px -6px #0E1119;
+        }
+
+        .container td:hover {
+            background-color: #FFF842;
+            color: #403E10;
+            font-weight: bold;
+            box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+            transform: translate3d(6px, -6px, 0);
+            transition-delay: 0s;
+            transition-duration: 0.4s;
+            transition-property: all;
+            transition-timing-function: line;
+        }
+    button, input, optgroup, select, textarea {
+        color: #FB667A;
+        font: inherit;
+        margin: 0;
+        background-color: #1F2739;
+    }
+</style>

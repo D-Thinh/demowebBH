@@ -1,0 +1,107 @@
+﻿@model WedBH.Models.Baohiem
+
+@{
+    ViewBag.Title = "Chitietbaohiem";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chitietbaohiem</h2>
+
+<div>
+    <h4>Baohiem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Phankhoixe.PHANKHOIXE1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phankhoixe.PHANKHOIXE1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TENCHUXE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENCHUXE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GIOITINH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GIOITINH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DIACHI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIACHI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BIENSO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BIENSO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SOKHUNG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SOKHUNG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SOMAY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SOMAY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.THOIHANBD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.THOIHANBD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.THOIHANKT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.THOIHANKT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PHIBH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PHIBH)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MABH }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

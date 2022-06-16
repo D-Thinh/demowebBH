@@ -1,0 +1,513 @@
+﻿@model WedBH.Models.Baohiem
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <!-- banner -->
+    @* <script type="text/javascript">
+            function loadcart() {
+                if (sessionStorage.getItem("TK") != null) {
+
+                    alert("Đăng nhập thành công");
+                }
+                else {
+                    alert("Đăng nhập thành công");
+                }
+
+            }
+            loadcart();
+        </script>*@
+    <div id="home" class="banner">
+        <div class="banner-agileinfo">
+            <!-- header -->
+            <div class="header">
+                <div class="container">
+                    <div class="logo">
+                        <h1><a href="index.html">BẢO HIỂM XE MÁY</a></h1>
+                    </div>
+                    <div class="menu">
+                        <a href="" id="menuToggle" style="top:5px"> <span class="navClosed"></span> </a>
+                        <nav>
+                            <a href="#home" class="active scroll">Trang chủ</a>
+                            <a href="#about" class="scroll">Thông tin chi tiết</a>
+                            <a href="#services" class="scroll">Dịch vụ</a>
+                            <a href="#news" class="scroll">Tin tức</a>
+                            <a href="#spec" class="scroll">Thông số kĩ thuật</a>
+                            <a href="#gallery" class="scroll">Bộ sưu tập</a>
+                            <a href="#contact" class="scroll">Đánh giá</a>
+                        </nav>
+                        <script>
+                            (function ($) {
+                                // Menu Functions
+
+                                $(document).ready(function () {
+                                    $('#menuToggle').click(function (e) {
+                                        var $parent = $(this).parent('.menu');
+                                        $parent.toggleClass("open");
+                                        var navState = $parent.hasClass('open') ? "hide" : "show";
+                                        $(this).attr("title", navState + " navigation");
+                                        // Set the timeout to the animation length in the CSS.
+                                        setTimeout(function () {
+                                            console.log("timeout set");
+                                            $('#menuToggle > span').toggleClass("navClosed").toggleClass("navOpen");
+                                        }, 200);
+                                        e.preventDefault();
+                                    });
+                                });
+                            })(jQuery);
+                        </script>
+
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <!-- //header -->
+            <div class="banner-text">
+                <div class="container">
+                    <h2>TRẢI NGHIỆM BẢO DƯỠNG CHẤT LƯỢNG TUYỆT VỜI <span></span></h2>
+                    <a href="#about" class="buy btn-wayra scroll">THÔNG TIN CHI TIẾT</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //banner -->
+    <!-- welcome -->
+    <div id="about" class="welcome">
+        <div class="container">
+            <div class="welcome-agileinfo">
+                <div class="col-md-6 w3ls_welcome_left">
+                    <div class="w3ls_welcome_right1">
+                        <h3 class="agileits-title"><span>T</span>hông tin chi tiết</h3>
+                        <h6>Bảo hiểm cho mọi nhà,<span>Chất lượng tuyệt đối,</span> Mang đến cho người dùng một cảm giác yên tâm.</h6>
+                        <p>
+                            Dịch vụ bảo hiểm xe máy của chúng tôi bao gồm bảo hiểm xe máy và dịch vụ bảo dưỡng kèm theo khi mua bảo hiểm.....
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 w3ls_welcome_right">
+                    <div class="agileits_w3layouts_welcome_grid">
+                        <img src="~/images/tải xuống.jpg" alt=" " class="img-responsive" />
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <!-- //welcome -->
+    <!-- slid -->
+    <div class="slid jarallax">
+        <div class="slid-text">
+            <h4>Hỗ trợ dịch vụ khách hàng 24/7</h4>
+            <p>Dịch vụ bảo dưỡng xe máy cho khách hàng mọi nơi, Mang đến cho khách hàng trải nghiệm tốt nhất. Mạng lưới trên 52 tỉnh thành.Đã bao gồm bảo hiểm bắt buộc, tai nạn, mất cắp xe.Miễn phí giao chứng nhận trong 7 ngày làm việc.</p>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <!-- //slid -->
+    <!-- services -->
+    <div id="services" class="services">
+        <div class="container">
+            <h3 class="agileits-title w3title2"><span>D</span>ịch vụ</h3>
+            <div class="services-row-agileinfo">
+                <div class="col-sm-4 col-xs-6 services-w3grid">
+                    <span class="fa fa-heart hi-icon" aria-hidden="true"></span>
+                    <h5>Tận tình</h5>
+                    <p>Khách hàng là thượng đế</p>
+                </div>
+                <div class="col-sm-4 col-xs-6 services-w3grid">
+                    <span class="fa fa-wrench hi-icon" aria-hidden="true"></span>
+                    <h5>Bảo dưỡng</h5>
+                    <p>Khách hàng là thượng đế</p>
+                </div>
+                <div class="col-sm-4 col-xs-6 services-w3grid">
+                    <span class="fa fa-bell hi-icon" aria-hidden="true"></span>
+                    <h5>Thông báo lịch bảo dưỡng</h5>
+                    <p>Khách hàng là thượng đế</p>
+                </div>
+                <div class="col-sm-4 col-xs-6 services-w3grid">
+                    <span class="fa fa-motorcycle hi-icon" aria-hidden="true"></span>
+                    <h5>Chi tiết bảo dưỡng</h5>
+                    <p>Khách hàng là thượng đế</p>
+                </div>
+                <div class="col-sm-4 col-xs-6 services-w3grid">
+                    <span class="fa fa-check-square-o hi-icon" aria-hidden="true"></span>
+                    <h5>Đánh dấu mỗi khi bảo dưỡng</h5>
+                    <p>Khách hàng là thượng đế</p>
+                </div>
+                <div class="col-sm-4 col-xs-6 services-w3grid">
+                    <span class="fa fa-gears hi-icon" aria-hidden="true"></span>
+                    <h5>Gói dịch vụ bảo dưỡng</h5>
+                    <p>Khách hàng là thượng đế</p>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <!-- //services -->
+    <!-- specifications -->
+    <div id="spec" class="spec jarallax">
+        <div class="container">
+            <h3 class="agileits-title w3title2"><span>T</span>hông tin dịch vụ</h3>
+            <div class="specw3-agileits">
+                <div class="col-md-6 spec-grids">
+                    <h4>1. Gói bảo hiểm 499k</h4>
+                    <ul>
+                        <li>
+                            <div class="specf-left">
+                                <p>Bao gồm các loại xe máy:</p>
+                            </div>
+                            <div class="specf-right">
+                                <p>50cc, 110cc, 125cc, 150cc, 155cc, 175cc</p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </li>
+                        <li>
+                            <div class="specf-left">
+                                <p>Bảo dưỡng định kì xe máy:</p>
+                            </div>
+                            <div class="specf-right">
+                                <p>Theo quí hoặc theo tháng</p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </li>
+                        <li>
+                            <div class="specf-left">
+                                <p>Phù hợp cho xe có giá mua mới ở mức từ 20tr đến khoảng 70 triệu đồng</p>
+                            </div>
+                            <div class="specf-right">
+                                <p>VD:SH, SH Mode, PCX, NVX, Liberty...</p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </li>
+                        <li>
+                            <div class="specf-left">
+                                <p>Số lần bảo dưỡng</p>
+                            </div>
+                            <div class="specf-right">
+                                <p>Gói hiểm hiểm thuộc theo quí 1 năm 4 lần</p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </li>
+                        <li>
+                            <div class="specf-left">
+                                <p>Báo hư nếu có</p>
+                            </div>
+                            <div class="specf-right">
+                                <p>Cam kết không tính phí thù lao</p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </li>
+                        <button style="background-color:burlywood " id="muangay" class="btn" onclick="Dangnhap()">
+                            <a style="color: white" class="nav-link" href="@Url.Action("Create","BaoHiem")">Mua ngay</a>
+                            @*<button type="button" class="btn btn-outline-warning">Mua ngay*@</button>
+                        @*</button>*@
+
+
+
+                    </ul>
+                </div>
+                <div class="col-md-6 spec-grids">
+                    <h4>2. Gói bảo hiểm 999k</h4>
+                    <ul>
+                        <li>
+                            <div class="specf-left">
+                                <p>Bảo dưỡng định kì từng tháng</p>
+                            </div>
+                            <div class="specf-right">
+                                <p>12 lần/1 năm</p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </li>
+                        <li>
+                            <div class="specf-left">
+                                <p>Nhắc lịch khách hàng mỗi khi gần hết tháng</p>
+                            </div>
+                            <div class="specf-right">
+                                <p></p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </li>
+                        <li>
+                            <div class="specf-left">
+                                <p>Phù hợp cho xe có giá mua mới ở mức từ 70 triệu đồng trở lên</p>
+                            </div>
+                            <div class="specf-right">
+                                <p>VD:SH, SH Mode, PCX, Kawasaki Z800....</p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </li>
+                        <li>
+                            <div class="specf-left">
+                                <p>Báo hư nếu có</p>
+                            </div>
+                            <div class="specf-right">
+                                <p>Cam kết không tính phí thù lao</p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </li>
+                        <button style="background-color:burlywood " id="muangay" class="btn" onclick="Dangnhap()">
+                            <a style="color: white" class="nav-link" href="@Url.Action("Create","BaoHiem")">Mua ngay</a>
+                        </button>
+                    </ul>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <!-- //specifications -->
+    <!-- news -->
+    <div id="news" class="news">
+        <div class="container">
+            <h3 class="agileits-title w3title2"><span>T</span>in tức </h3>
+            <div class="news-agileinfo">
+                <div class="col-md-4 news-w3grid">
+                    <img src="~/images/tải xuống (1).jpg" alt="" style="height:262px">
+                    <div class="news-w3grid-info">
+                        <h5><span>25</span>Tháng 5</h5>
+                        <h4>Gói bảo dưỡng</h4>
+                        <p>Ra mắt các dịch vụ bảo dưỡng mới</p>
+                        <div class="article-links">
+                            <ul>
+                                <li><a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>1,052</span></a></li>
+                                <li><a href="#"><i class="glyphicon glyphicon-comment"></i><span>10K</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 news-w3grid">
+                    <img src="~/images/tải xuống (2).jpg" alt="" style="height:262px">
+                    <div class="news-w3grid-info">
+                        <h5><span>15</span>Tháng 10</h5>
+                        <h4>Cứu hộ</h4>
+                        <p>Ra mắt trước năng cứu hộ ra máy</p>
+                        <div class="article-links">
+                            <ul>
+                                <li><a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>1,052</span></a></li>
+                                <li><a href="#"><i class="glyphicon glyphicon-comment"></i><span>10K</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 news-w3grid">
+                    <img src="~/images/tải xuống (3).jpg" alt="" style="height:262px">
+                    <div class="news-w3grid-info">
+                        <h5><span>18</span> Tháng 6 </h5>
+                        <h4>Thay đổi gói bảo hiểm</h4>
+                        <p>Cập nhật giá cả thị trường</p>
+                        <div class="article-links">
+                            <ul>
+                                <li><a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>1,052</span></a></li>
+                                <li><a href="#"><i class="glyphicon glyphicon-comment"></i><span>10K</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <!-- //news -->
+    <!-- gallery -->
+    <div class="gallery" id="gallery">
+        <h3 class="agileits-title w3title2"><span>B</span>ộ sưu tập những xe đã từng mua gói bên công ty</h3>
+        <div class="gallery-info">
+            <div class="col-sm-6 gallery-grids glry-grid1">
+                <div class="gallery-grids-top">
+                    <a class="b-link-stripe b-animate-go" href="images/g3.jpg" data-lightbox="example-set" data-title="Hình ảnh chân thật">
+                        <img src="images/g3.jpg" class="img-responsive" alt="" />
+                        <div class="b-wrapper">
+                            <span class="b-animate b-from-left">
+                                <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div class="gallery-grids-top">
+                    <div class="col-sm-6 col-xs-6 bottom-grids">
+                        <a class="b-link-stripe b-animate-go" href="images/img2.jpg" data-lightbox="example-set" data-title="Hình ảnh chân thật">
+                            <img src="images/img2.jpg" class="img-responsive" alt="" />
+                            <div class="b-wrapper">
+                                <span class="b-animate b-from-left">
+                                    <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-xs-6 bottom-grids">
+                        <a class="b-link-stripe b-animate-go" href="images/img4.jpg" data-lightbox="example-set" data-title="Hình ảnh chân thật">
+                            <img src="images/img4.jpg" class="img-responsive" alt="" />
+                            <div class="b-wrapper">
+                                <span class="b-animate b-from-left">
+                                    <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-6 gallery-grids glry-grid2">
+                <a class="b-link-stripe b-animate-go" href="images/g2.jpg" data-lightbox="example-set" data-title="Hình ảnh chân thật">
+                    <img src="images/g2.jpg" class="img-responsive" alt="" />
+                    <div class="b-wrapper">
+                        <span class="b-animate b-from-left">
+                            <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-3 col-xs-6 gallery-grids glry-grid3">
+                <a class="b-link-stripe b-animate-go" href="images/g1.jpg" data-lightbox="example-set" data-title="Hình ảnh chân thật">
+                    <img src="images/g1.jpg" class="img-responsive" alt="" />
+                    <div class="b-wrapper">
+                        <span class="b-animate b-from-left">
+                            <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </a>
+                <a class="b-link-stripe b-animate-go" href="images/img1.jpg" data-lightbox="example-set" data-title="Hình ảnh chân thật">
+                    <img src="images/img1.jpg" class="img-responsive" alt="" />
+                    <div class="b-wrapper">
+                        <span class="b-animate b-from-left">
+                            <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </a>
+            </div>
+            <div class="clearfix"></div>
+            <script src="js/lightbox-plus-jquery.min.js"></script>
+        </div>
+    </div>
+    <!-- //gallery -->
+    <!-- contact -->
+    <div class="contact" id="contact">
+        <div class="container">
+            <h3 class="agileits-title w3title2"><span>Đ</span>ánh giá</h3>
+            <div class="contact-grids">
+                <div class="col-md-5 address">
+                    <h4>Đôi lời gửi đến khách hàng</h4>
+                    <p class="cnt-p">Những lời nhận xét và đánh giá của quí khách chúng tôi sẽ ghi nhận và chỉnh sửa theo đúng ý khách hàng</p>
+                    <div class="agile_social_icons">
+                        <ul class="agileits_social_list">
+                            <li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="w3_agile_vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                    <p>Linh xuân, Thủ Đức, VN. </p>
+                    <p>Telephone: 0793966897</p>
+                    <p>Email : <a href="mailto:example@mail.com">nguyenthanh1472@gmail.com</a></p>
+                </div>
+                <div class="col-md-7 contact-form">
+                    <div class="col-md-7 contact-form">
+                        <form action="#" method="post">
+                            <div class="shipName" style="right:0px">
+                                <input type="shipName" name="shipName" placeholder="Name" required="">
+                            </div>
+                            <input type="email" class="email" name="Email" placeholder="Email" required="">
+                            <textarea placeholder="Message" name="Message" required=""></textarea>
+                            <input type="submit" value="Nhận xét">
+                        </form>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="w3-agilemap">
+                @*<iframe src="https://goo.gl/maps/8D7DNmtvWTEn7PF89"></iframe>*@
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d244.8829122045119!2d106.77427516900387!3d10.877974746383199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3302f96fbad13d9b!2zMTDCsDUyJzQwLjgiTiAxMDbCsDQ2JzI3LjgiRQ!5e0!3m2!1svi!2s!4v1653118872911!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+    <!-- //contact -->
+    <!-- footer -->
+   @* <div class="footer">
+        <div class="container">
+            <div class="footer-w3lsrow">
+                <div class="col-md-4 footer-grids footer-address">
+                    <h3>Thông tin liên lạc:</h3>
+                    <ul>
+                        <li><i class="glyphicon glyphicon-send"></i>39/6, Đường số 10, Phường Linh Xuân, Thành Phố Thủ Đức, Việt Nam<span></span></li>
+                        <li><i class="glyphicon glyphicon-phone"></i> +0793966897<span> +0773561819</span></li>
+                        <li><i class="glyphicon glyphicon-envelope"></i> <a href="mailto:example@mail.com">nguyenthanh1472@gmail.com</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 footer-grids subscribe">
+                    <h3>Newsletter :</h3>
+                    <form action="#" method="post">
+                        <input type="email" name="Email" placeholder="Your Email" required="">
+                        <input type="submit" value="Theo dõi">
+                        <div class="clearfix"> </div>
+                    </form>
+
+                </div>
+                <div class="col-md-4 footer-grids footer-icons">
+                    <h3>Follow Us :</h3>
+                    <div class="agile_social_icons">
+                        <ul class="agileits_social_list">
+                            <li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="w3_agile_vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="footer-bottom">
+                <p>©2022 Dịch vụ xe máy. Cám ơn tất cả quí khách đã ghé thăm| Thiết kế <a href="https://www.facebook.com/profile.php?id=100007612626475">Nguyễn Ngọc Thành</a></p>
+            </div>
+        </div>
+    </div>*@
+    <!-- //footer -->
+    <!-- jarallax -->
+    <script src="js/SmoothScroll.min.js"></script>
+    <script src="js/jarallax.js"></script>
+    <script type="text/javascript">
+        /* init Jarallax */
+        $('.jarallax').jarallax({
+            speed: 0.5,
+            imgWidth: 1366,
+            imgHeight: 768
+        })
+    </script>
+    <!-- //jarallax -->
+    <!-- start-smooth-scrolling -->
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+            };
+            */
+
+            $().UItoTop({ easingType: 'easeOutQuart' });
+
+        });
+    </script>
+    <!-- //smooth-scrolling-of-move-up -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/bootstrap.js"></script>
+</body>
+</html>

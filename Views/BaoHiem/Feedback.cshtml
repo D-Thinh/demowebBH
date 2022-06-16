@@ -1,0 +1,229 @@
+﻿@model WedBH.Models.Baohiem
+@{
+    ViewBag.Title = "Nhắc lịch bảo dưỡng";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <div class="contact" id="contact">
+        <div class="container">
+            <div class="col-md-7 contact-form">
+                <form action="#" method="post">
+                    <div class="clearfix">
+                        <img align="right" height="300" src="~/images/mail.png" class="img" alt="">
+                    </div>
+                    <input type="shipName" name="shipName" placeholder="Name" required=""><br />
+                    <input type="mobile" name="mobile" placeholder="Số điện thoại" required=""><br />
+                    <input type="address" name="address" placeholder="Địa chỉ" required=""><br />
+                    <input type="email" class="email" name="Email" placeholder="Email" required=""><br />
+                    <textarea placeholder="Message" name="Message" required=""></textarea><br />
+                    <input type="submit" value="Nhận xét">
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <div class="container">
+            <div class="footer-w3lsrow">
+                <div class="col-md-4 footer-grids footer-address">
+                    <h3>Thông tin liên lạc:</h3>
+                    <ul>
+                        <li><i class="glyphicon glyphicon-send"></i>39/6, Đường số 10, Phường Linh Xuân, Thành Phố Thủ Đức, Việt Nam<span> New York City USA. </span></li>
+                        <li><i class="glyphicon glyphicon-phone"></i> +0793966897<span> +0773561819</span></li>
+                        <li><i class="glyphicon glyphicon-envelope"></i> <a href="mailto:example@mail.com">nguyenthanh1472@gmail.com</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 footer-grids subscribe">
+                    <h3>Newsletter :</h3>
+                    <form action="#" method="post">
+                        <input type="email" name="Email" placeholder="Your Email" required="">
+                        <input type="submit" value="Theo dõi">
+                        <div class="clearfix"> </div>
+                    </form>
+
+                </div>
+                <div class="col-md-4 footer-grids footer-icons">
+                    <h3>Follow Us :</h3>
+                    <div class="agile_social_icons">
+                        <ul class="agileits_social_list">
+                            <li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="w3_agile_vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="footer-bottom">
+                <p>©2022 Dịch vụ xe máy. Cám ơn tất cả quí khách đã ghé thăm| Thiết kế <a href="https://www.facebook.com/profile.php?id=100007612626475">Nguyễn Ngọc Thành</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<style>
+    .clearfix {
+        top: 100px;
+        margin: 5px;
+        float: left;
+        width: 150px;
+        padding: 25px 100px 75px 400px;
+    }
+
+    .container {
+        border-radius: 5px 10px;
+       @* background-color: #f2f2f2;*@
+        height: 400px;
+    }
+
+    input[type=submit] {
+        width: 12%;
+        padding: 8px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        font: 200px;
+        background-color: #58257b;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input {
+        width: 30%;
+        padding: 8px 10px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 3px solid #e9d8f4;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        outline: none;
+    }
+
+        input:focus {
+            border: 3px solid #58257b;
+        }
+
+    textarea {
+        width: 30%;
+        padding: 15px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        box-sizing: border-box;
+        border: 3px solid #e9d8f4;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        outline: none;
+    }
+
+
+    .footer {
+        padding: 4em 0;
+        background: #191d20;
+    }
+
+    .footer-w3lsrow h3 {
+        font-size: 2.3em;
+        color: #ea7686;
+        margin-bottom: 0.8em;
+    }
+
+    .footer input[type="email"] {
+        width: 70%;
+        padding: 1em;
+        font-size: 0.9em;
+        float: left;
+        color: #fff;
+        outline: none;
+        border: 1px solid #fff;
+        border-right: none;
+        background: none;
+        -webkit-appearance: none;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+    }
+
+    .footer input[type="submit"] {
+        float: left;
+        color: #fff;
+        font-size: .9em;
+        outline: none;
+        padding: 1em;
+        border: 1px solid #FFF;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -webkit-appearance: none;
+        background: none;
+    }
+
+    .footer form:hover input[type="text"] {
+        border-color: #6199ff;
+    }
+
+    .footer form:hover input[type="submit"] {
+        border-color: #6199ff;
+        background: #6199ff;
+    }
+
+    ::-webkit-input-placeholder {
+        color: #999 !important;
+    }
+
+    :-moz-placeholder { /* Firefox 18- */
+        color: #999 !important;
+    }
+
+    ::-moz-placeholder { /* Firefox 19+ */
+        color: #999 !important;
+    }
+
+    :-ms-input-placeholder {
+        color: #999 !important;
+    }
+
+    .footer-grids.footer-address ul li {
+        display: block;
+        color: #fff;
+        font-size: 1em;
+    }
+
+        .footer-grids.footer-address ul li:nth-child(2) {
+            margin: 1.2em 0;
+        }
+
+    .footer-address ul li i.glyphicon {
+        font-size: 1.3em;
+        color: #6199ff;
+        margin-right: .5em;
+    }
+
+    .footer-grids.footer-address ul li a {
+        color: #6199ff;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.21);
+        padding-top: 2em;
+        margin-top: 2em;
+    }
+
+    .footer p, .footer p a:hover, .footer-w3lsrow .footer-address ul li a:hover {
+        color: #fff;
+    }
+
+        .footer p a {
+            color: #6199ff;
+        }
+
+</style>

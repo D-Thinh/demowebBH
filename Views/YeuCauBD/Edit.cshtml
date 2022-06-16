@@ -1,0 +1,371 @@
+﻿@model WedBH.Models.YeucauBD
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="index-hero slick-initialized slick-slider">
+        <div class="slick-list draggable" style="height: 280.75px;">
+            <div class="slick-track" style="opacity: 1; width: 1309px;">
+                <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 1309px; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;">
+                    <div>
+                        <div class="hero__slide" style="width: 100%; display: inline-block;">
+
+                            <picture style=" width : 100%">
+                                <img src="~/images/bikecategory.jpg" alt=" " class="img-responsive" />
+                            </picture>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-horizontal">
+
+
+
+        <div class="">
+        </div>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.MABH, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5> Mã yêu cầu:   @Html.DisplayFor(model => model.MAYC)</h5>
+            <div class="col-md-10">
+
+                @* @Html.EditorFor(model => model.MAYC, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MAYC, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+
+        <div class="form-group">
+            @* @Html.LabelFor(model => model.TENCHUXE, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5> Tên tài khoản:  @Html.DisplayFor(model => model.TK)</h5>
+            <div class="col-md-10">
+                @* @Html.EditorFor(model => model.TK, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TK, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.SDT, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5> Tình trạng xe:  @Html.DisplayFor(model => model.MOTA)</h5>
+            <div class="col-md-10">
+                @* @Html.EditorFor(model => model.MOTA, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MOTA, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @*   @Html.LabelFor(model => model.MAPK, "MAPK", htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5> Trạng thái: </h5>
+            <div class="col-md-10">
+                <select name="TRANGTHAI" class="form-control" onchange="changtotal(this)">
+                    <option> Yêu cầu</option>
+                    <option> Đã xác nhận</option>
+                    <option> Từ chối</option>
+                </select>
+                @* @Html.EditorFor(model => model.TRANGTHAI, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TRANGTHAI, "", new { @class = "text-danger" })
+                    Yêu cầu: @Html.RadioButtonFor(model => model.TRANGTHAI, "Yêu cầu")
+                    Xác nhận: @Html.RadioButtonFor(model => model.TRANGTHAI, "Xác nhận")*@
+            </div>
+        </div>
+        <!--<div class="form-group">-->
+        @* @Html.LabelFor(model => model.DIACHI, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <!--<h5> Ảnh 1</h5>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ANH1, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ANH1, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">-->
+        @* @Html.LabelFor(model => model.BIENSO, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <!--<h5> Ảnh 2</h5>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ANH2, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ANH2, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">-->
+        @*  @Html.LabelFor(model => model.SOKHUNG, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <!--<h5> Ảnh 3</h5>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ANH3, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ANH3, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">-->
+        @*@Html.LabelFor(model => model.SOMAY, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <!--<h5> Ảnh 4</h5>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ANH4, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ANH4, "", new { @class = "text-danger" })
+        </div>-->
+        <!--<div class="hinhAnhCreated">
+            <div class="form-group form-hinhanh">
+                <label class="control-label col-md-2">
+                    Hình ảnh
+                </label>
+                <div class="col-md-10">-->
+        @* @Html.EditorFor(model => model.ANH1, new { htmlAttributes = new { @class = "form-control label-hide hinhAnh1 hinhInputHide" } })*@
+
+        <!--<img src="@Model.ANH1" alt="Set UpDate" />
+            </div>
+        </div>
+
+
+        <div class="form-group form-hinhanh">
+            <label class="control-label col-md-2">
+                Hình ảnh
+            </label>
+            <div class="col-md-10">-->
+        @* @Html.EditorFor(model => model.ANH2, new { htmlAttributes = new { @class = "form-control label-hide hinhAnh2 hinhInputHide" } })*@
+        <!--<img src="@Model.ANH2" alt="Set UpDate" />
+            </div>
+        </div>
+
+        <div class="form-group form-hinhanh">
+            <label class="control-label col-md-2">
+                Hình ảnh
+            </label>
+            <div class="col-md-10">-->
+        @*@Html.EditorFor(model => model.ANH3, new { htmlAttributes = new { @class = "form-control label-hide hinhAnh3 hinhInputHide" } })*@
+
+        <!--<img src="@Model.ANH3" alt="Set UpDate" />
+            </div>
+        </div>
+
+        <div class="form-group form-hinhanh">
+            <label class="control-label col-md-2">
+                Hình ảnh
+            </label>
+            <div class="col-md-10">-->
+        @*  @Html.EditorFor(model => model.ANH4, new { htmlAttributes = new { @class = "form-control label-hide hinhAnh4 hinhInputHide" } })*@
+
+        <!--<img src="@Model.ANH4" alt="Set UpDate" />
+                </div>
+            </div>
+        </div>-->
+
+        <div class="gallery-info">
+            <div class="col-sm-6 gallery-grids glry-grid1">
+                <div class="gallery-grids-top">
+                    <a class="b-link-stripe b-animate-go" href="@Model.ANH1" data-lightbox="example-set" data-title="Hình ảnh chân thật">
+
+                        <img src="@Model.ANH1" class="img-responsive" alt="Set UpDate" />
+                        <div class="b-wrapper">
+                            <span class="b-animate b-from-left">
+                                <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div class="gallery-grids-top">
+                    <div class="col-sm-6 col-xs-6 bottom-grids">
+                        <a class="b-link-stripe b-animate-go" href="@Model.ANH2" data-lightbox="example-set" data-title="Hình ảnh chân thật">
+                            <img src="@Model.ANH2" class="img-responsive" alt="Set UpDate" />
+                            <div class="b-wrapper">
+                                <span class="b-animate b-from-left">
+                                    <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-sm-6 col-xs-6 bottom-grids">
+                        <a class="b-link-stripe b-animate-go" href="@Model.ANH3" data-lightbox="example-set" data-title="Hình ảnh chân thật">
+                            <img src="@Model.ANH3" class="img-responsive" alt="Set UpDate" />
+                            <div class="b-wrapper">
+                                <span class="b-animate b-from-left">
+                                    <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="gallery-grids-top">
+                    <a class="b-link-stripe b-animate-go" href="@Model.ANH4" data-lightbox="example-set" data-title="Hình ảnh chân thật">
+                        <img src="@Model.ANH4" class="img-responsive" alt="Set UpDate" />
+                        <div class="b-wrapper">
+                            <span class="b-animate b-from-left">
+                                <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+            @*     <div class="col-sm-3 col-xs-6 gallery-grids glry-grid3">
+                    <a class="b-link-stripe b-animate-go" href="images/g1.jpg" data-lightbox="example-set" data-title="Hình ảnh chân thật">
+                        <img src="images/g1.jpg" class="img-responsive" alt="" />
+                        <div class="b-wrapper">
+                            <span class="b-animate b-from-left">
+                                <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </a>
+                    <a class="b-link-stripe b-animate-go" href="images/img1.jpg" data-lightbox="example-set" data-title="Hình ảnh chân thật">
+                        <img src="images/img1.jpg" class="img-responsive" alt="" />
+                        <div class="b-wrapper">
+                            <span class="b-animate b-from-left">
+                                <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </a>
+                </div>*@
+            <div class="clearfix"></div>
+            <script src="js/lightbox-plus-jquery.min.js"></script>
+        </div>
+
+
+        <br />
+    </div>
+
+
+    <div class="form-group">
+
+        <input type="submit" value="Từ chối yêu cầu" class="btn btn-default" />
+        <div class="col-md-10">
+            <input type="submit" value="Xác nhận bảo dưỡng" class="btn btn-default" />
+        </div>
+    </div>
+
+
+  @*  <div class="buy-total">
+        <div class="buy-action row">
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Từ chối yêu cầu" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="buy-total">
+        <div class="buy-action row">
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Từ chối yêu cầu" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+
+    <br />
+    <br />
+    <br />
+    <!--<div class="footer">
+        <div class="container">
+            <div class="footer-w3lsrow">
+                <div class="col-md-4 footer-grids footer-address">
+                    <h3>Thông tin liên lạc:</h3>
+                    <ul>
+                        <li><i class="glyphicon glyphicon-send"></i>39/6, Đường số 10, Phường Linh Xuân, Thành Phố Thủ Đức, Việt Nam<span> New York City USA. </span></li>
+                        <li><i class="glyphicon glyphicon-phone"></i> +0793966897<span> +0773561819</span></li>
+                        <li><i class="glyphicon glyphicon-envelope"></i> <a href="mailto:example@mail.com">nguyenthanh1472@gmail.com</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 footer-grids subscribe">
+                    <h3>Newsletter :</h3>
+                    <form action="#" method="post">-->
+    @* <input type="email" name="Email" placeholder="Your Email" required="">*@
+    @*<input type="submit" value="Theo dõi">*@
+    <!--<div class="clearfix"> </div>
+                    </form>
+
+                </div>
+                <div class="col-md-4 footer-grids footer-icons">
+                    <h3>Follow Us :</h3>
+                    <div class="agile_social_icons">
+                        <ul class="agileits_social_list">
+                            <li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="w3_agile_vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="footer-bottom">
+                <p>©2022 Dịch vụ xe máy. Cám ơn tất cả quí khách đã ghé thăm     Thiết kế <a href="https://www.facebook.com/profile.php?id=100007612626475">Nguyễn Ngọc Thành</a></p>
+            </div>
+        </div>
+    </div>-->
+}
+
+
+<style>
+    .hinhAnhCreated {
+        border: none;
+        display: flex;
+        height: 50%;
+        width: 30%;
+    }
+
+    .form-hinhanh {
+        display: flex;
+        flex-direction: column;
+        flex-direction: row;
+    }
+
+    .hinhInputHide {
+        display: none;
+    }
+
+    .form-horizontal {
+        width: 82%;
+        /* display: inline-block; */
+        position: relative;
+        left: 50%;
+        transform: translateX(-29%);
+    }
+
+    .gallery {
+        background: #e1e6e9;
+    }
+
+    .gallery-grids {
+        padding: 0;
+    }
+
+    .bottom-grids {
+        padding: 0;
+    }
+
+    .gallery img.img-responsive {
+        width: 100%;
+    }
+
+    .b-wrapper span i.fa {
+        font-size: 3em;
+        color: #fff;
+        -webkit-transition: .5s all;
+        -moz-transition: .5s all;
+        -o-transition: .5s all;
+        transition: .5s all;
+    }
+
+        .b-wrapper span i.fa:hover {
+            -webkit-transform: scale(1.2);
+            -moz-transform: scale(1.2);
+            -o-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            transform: scale(1.2);
+            color: #6199ff;
+        }
+</style>

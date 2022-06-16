@@ -1,0 +1,263 @@
+﻿@model WedBH.Models.Baohiem
+
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="index-hero slick-initialized slick-slider">
+        <div class="slick-list draggable" style="height: 280.75px;">
+            <div class="slick-track" style="opacity: 1; width: 1309px;">
+                <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 1309px; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;">
+                    <div>
+                        <div class="hero__slide" style="width: 100%; display: inline-block;">
+
+                            <picture style=" width : 100%">
+                                <img src="~/images/bikecategory.jpg" alt=" " class="img-responsive" />
+                            </picture>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-horizontal">
+
+
+
+        <div class="">
+        </div>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.MABH, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5> Mã bảo hiểm</h5>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MABH, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MABH, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @* @Html.LabelFor(model => model.TENCHUXE, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5> Tên chủ xe</h5>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TENCHUXE, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TENCHUXE, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.SDT, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5> Số điện thoại</h5>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SDT, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SDT, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+       
+        <div class="form-group">
+         @*   @Html.LabelFor(model => model.MAPK, "MAPK", htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5> Phân khối xe</h5>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MAPK, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MAPK, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.MAPK, "MAPK", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select name="LoaiSanPham">
+                    @Html.DropDownList("MAPK", null, htmlAttributes: new { @class = "form-control" })
+
+                </select>
+                @Html.ValidationMessageFor(model => model.MAPK, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.GIOITINH, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <h5> Giới tính</h5>
+        <div class="col-md-10">
+            @Html.RadioButtonFor(model => model.GIOITINH,"Nam", "Nữ")
+            @Html.EditorFor(model => model.GIOITINH, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.GIOITINH, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+        <div class="form-group">
+           @* @Html.LabelFor(model => model.DIACHI, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5> Địa chỉ</h5>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DIACHI, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DIACHI, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+           @* @Html.LabelFor(model => model.BIENSO, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5> Biển số</h5>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.BIENSO, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.BIENSO, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+          @*  @Html.LabelFor(model => model.SOKHUNG, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5> Số khung</h5>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SOKHUNG, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SOKHUNG, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.SOMAY, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5> Số máy</h5>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SOMAY, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SOMAY, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+           @* @Html.LabelFor(model => model.THOIHANBD, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5> Thời gian bắt đầu</h5>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.THOIHANBD, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.THOIHANBD, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+           @* @Html.LabelFor(model => model.THOIHANKT, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5> Thời gian kết thúc</h5>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.THOIHANKT, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.THOIHANKT, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+          @*  @Html.LabelFor(model => model.PHIBH, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5> Phí bảo hiểm</h5>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PHIBH, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PHIBH, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+           @* @Html.LabelFor(model => model.Gmail, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5> Gmail</h5>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Gmail, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Gmail, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="buy-total">
+            <p class="buy-total-txt fw-700 title-18">
+                Tổng phí (gồm VAT): <span class="color-main"><b class="txtTotalPremium">0</b> VNĐ</span>
+            </p>
+            <p class="buy-total-txt fw-700 title-18">
+                Số tiền chiết khấu: <span class="color-main"><b class="txtPromotionsPercent">0</b> VNĐ</span>
+            </p>
+            <p class="buy-total-txt fw-700 title-30">Tổng phí thực thu (gồm VAT):  <span class="color-main"><b class="total_price">0</b> VNĐ</span></p>
+            <p id="notification"></p>
+            <div class="buy-action row">
+                <div class="col-md-6">
+                    <button  class="btn"><a href="@Url.Action("Index", "Home")" class="btn btn-sussce btn-Thanh-toan-Momo">Quay lại</a></button>
+
+                </div>
+                <div class="col-md-6">
+                    @*<button style="font-size: 18px" onclick="Create()" class="btn">mua ngay</button>*@
+                    <a href="@Url.Action("PaymentByMomo", "buy")" class="btn btn-sussce btn-Thanh-toan-Momo">Thanh toán qua Momo @*<input type="submit" value="Create" class="btn btn-default" />*@</a>
+                    
+                </div>
+            </div>
+        </div>
+
+
+       @* <button style="background-color:burlywood " id="muangay" class="btn" onclick="Dangnhap()">
+            <a style="color: white" class="nav-link" href="@Url.Action("Index","Home")"></a>
+        </button>
+
+
+        <button style="background-color:burlywood " id="muangay" class="btn" onclick="Dangnhap()">
+            <a style="color: white" class="nav-link" href="@Url.Action("Create","BaoHiem")">Mua ngay</a>
+        </button>*@
+@*
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Mua ngay" class="btn btn-default" />
+            </div>
+        </div>*@
+        <br />
+        <br />
+        <br />
+    </div>
+
+
+    <div class="footer">
+        <div class="container">
+            <div class="footer-w3lsrow">
+                <div class="col-md-4 footer-grids footer-address">
+                    <h3>Thông tin liên lạc:</h3>
+                    <ul>
+                        <li><i class="glyphicon glyphicon-send"></i>39/6, Đường số 10, Phường Linh Xuân, Thành Phố Thủ Đức, Việt Nam<span> New York City USA. </span></li>
+                        <li><i class="glyphicon glyphicon-phone"></i> +0793966897<span> +0773561819</span></li>
+                        <li><i class="glyphicon glyphicon-envelope"></i> <a href="mailto:example@mail.com">nguyenthanh1472@gmail.com</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 footer-grids subscribe">
+                    <h3>Newsletter :</h3>
+                    <form action="#" method="post">
+                        @* <input type="email" name="Email" placeholder="Your Email" required="">*@
+                        @*<input type="submit" value="Theo dõi">*@
+                        <div class="clearfix"> </div>
+                    </form>
+
+                </div>
+                <div class="col-md-4 footer-grids footer-icons">
+                    <h3>Follow Us :</h3>
+                    <div class="agile_social_icons">
+                        <ul class="agileits_social_list">
+                            <li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="w3_agile_vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="footer-bottom">
+                <p>©2022 Dịch vụ xe máy. Cám ơn tất cả quí khách đã ghé thăm     Thiết kế <a href="https://www.facebook.com/profile.php?id=100007612626475">Nguyễn Ngọc Thành</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!--buy-box-->
+    @* <div class="buy-action row">
+            <div class="col-md-6">
+                <a href="javascript:;" class="btn btn-outline-primary btn-show-step1 form-md-1 fw-700 title-26">Quay lại</a>
+            </div>
+            <div class="col-md-6">
+                <a href="javascript:;" class="btn btn-primary btn-cart-save form-md-1 fw-700 title-26">Tiếp tục</a>
+            </div>
+        </div>*@
+}
+
